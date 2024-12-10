@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+#root {
+  width: 100vw;
+  max-height: 100vh;
+  height: 100vh;
+  
+  padding: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.card {
+  border: 1px  solid #eaeaea;
+  height: 100%;
+  width: 24vw;
+  border-radius: 8px;
+  padding: 2em;
+}
+
+.card2 {
+  border: 1px  solid #eaeaea;
+  height: 30vh;
+  width: 100%;
+  border-radius: 8px;
+  padding: 2em;
+}

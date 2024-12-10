@@ -1,0 +1,15 @@
+.hideScrollbar {
+    scrollbar-width: none; /* For Firefox */
+}
+
+.hideScrollbar::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+.emotionImage {
+    background-color: aliceblue;
+    border-radius: 50%;
+    filter:   sepia(1) saturate(5) hue-rotate(30deg); 
+    width: 50px;
+    height: 50px;
+}
