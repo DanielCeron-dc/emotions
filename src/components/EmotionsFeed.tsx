@@ -11,7 +11,7 @@ const pillOptions = [
     "neutral"
 ];
 
-const EmotionsFeed = () => {
+const EmotionsFeed:React.FC<{emotions: string[]}> = (props) => {
     const [emotions, setEmotions] = useState<string[]>([]);
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -48,7 +48,7 @@ const EmotionsFeed = () => {
                 }}
                 className={styles.hideScrollbar} // Apply the CSS module class
             >
-                {emotions.map((emotion, index) => (
+                {props.emotions.map((emotion, index) => (
                     <div
                         key={index}
                         style={{

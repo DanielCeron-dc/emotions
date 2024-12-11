@@ -1,7 +1,13 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./Camera.module.css";
 
-const Camera = () => {
+
+interface IProps {
+    sendEmotion: (emotion: string) => void;
+}
+
+
+const Camera:React.FC<IProps> = (props) => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -50,8 +56,7 @@ const Camera = () => {
     };
 
     const sendPhotoToAPI = (imageData: string) => {
-        // Replace 'your-api-endpoint' with the actual API URL
-        fetch("your-api-endpoint", {
+        fetch("https://4576-181-32-120-235.ngrok-free.app/predict", { 
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -61,6 +66,8 @@ const Camera = () => {
             .then((response) => response.json())
             .then((data) => {
                 console.log("Emotion analysis result:", data);
+                // data.emotion will hold the predicted emotion
+                props.sendEmotion(data.emotion);
             })
             .catch((error) => {
                 console.error("Error sending photo to API: ", error);

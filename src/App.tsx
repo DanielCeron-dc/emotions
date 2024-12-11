@@ -1,8 +1,20 @@
+import { useState } from 'react'
 import './App.css'
 import Camera from './components/Camera'
 import EmotionsFeed from './components/EmotionsFeed'
 
 function App() {
+
+
+
+  const [emotions, setEmotions] = useState<string[]>([])
+
+  const handleEmotion = (emotion: string) => {
+    setEmotions((prevEmotions) => {
+      return [...prevEmotions
+        , emotion]
+    })
+  }
 
   return (
     <>
@@ -24,8 +36,12 @@ function App() {
         height: '100%',
         width: '50vw',
       }}> 
-        <Camera />
-        <EmotionsFeed />
+        <Camera 
+          sendEmotion={handleEmotion}
+        />
+        <EmotionsFeed
+          emotions = {emotions}
+        />
       </div>
     </>
   )
