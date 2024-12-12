@@ -21,10 +21,10 @@ function App() {
       <div className="card">
         <h1>Emotions AI</h1>
         <p>
-          Created by Daniel Ceron and Diego lopez
+          Creado por Daniel Ceron and Fredy
         </p>
         <p>
-          Project done in React using TypeScript, and Python with Flask
+          Hecho con React, TypeScript y  python
         </p>
       </div>
 
@@ -35,12 +35,12 @@ function App() {
         alignItems: 'center',
         height: '100%',
         width: '50vw',
-      }}> 
-        <Camera 
+      }}>
+        <Camera
           sendEmotion={handleEmotion}
         />
         <EmotionsFeed
-          emotions = {emotions}
+          emotions={emotions}
         />
       </div>
     </>
